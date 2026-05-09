@@ -1,0 +1,300 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Trivenitent House</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="#" class="brand" aria-label="Trivenitent House">
+<img class="brand-logo" src="images/logo.jpeg" alt="Trivenitent House" />
+        <span class="brand-text">Trivenitent House</span>
+      </a>
+
+      <button class="menu-toggle" aria-label="Open menu" aria-expanded="false" aria-controls="primary-navigation">
+        <span class="hamburger" aria-hidden="true"></span>
+      </button>
+
+      <nav id="primary-navigation" class="site-nav" aria-label="Primary navigation">
+        <a class="nav-link" href="index.html">Home</a>
+        <a class="nav-link" href="page2.html">About</a>
+        <a class="nav-link" href="page3.html">Services</a>
+        <a class="nav-link" href="page4.html">Gallery</a>
+        <a class="nav-link" href="page5.html">Contact</a>
+        <a class="nav-link" href="products.html">Products</a>
+      </nav>
+
+
+      <a class="cta" href="page5.html">Book Now</a>
+
+
+    </div>
+  </header>
+
+  <main id="main">
+    <section id="home" class="hero">
+      <div class="container hero-grid">
+        <div class="hero-copy">
+          <div class="pill">Trivenitent House • <span id="hero-pill">Tent House Materials</span></div>
+          <h1 id="hero-title">Premium tenting solutions for events, weddings, and exhibitions.</h1>
+          <p id="hero-desc">
+            We manufacture and supply tents, shamiyanas, pandals, waterproof coverings,
+            structures, stages, lighting, sound systems, and all related event accessories.
+          </p>
+
+          <script>
+            (function(){
+              const slides = [
+                {
+                  pill: 'Tent House Materials',
+                  title: 'Premium tenting solutions for events, weddings, and exhibitions.',
+                  desc: 'We manufacture and supply tents, shamiyanas, pandals, waterproof coverings, structures, stages, lighting, sound systems, and all related event accessories.',
+                  img: 'images/1.webp'
+                },
+                {
+                  pill: 'Wedding Tent Setups',
+                  title: 'Elegant wedding tents with a seamless guest experience.',
+                  desc: 'Wedding tents, premium setups, and complete event accessories for ceremonies, receptions, and celebrations.',
+                  img: 'images/2.jpg'
+                },
+                {
+                  pill: 'Industrial & Exhibition Tents',
+                  title: 'Industrial strength and exhibition-ready structures.',
+                  desc: 'Strong industrial tents and showcase-ready exhibition spaces designed for reliability and performance.',
+                  img: 'images/3.jpg'
+                }
+              ];
+
+              // Set initial hero image immediately (avoid flash of old src)
+              const heroImg = document.getElementById('hero-img');
+              if(heroImg && slides[0]?.img){
+                heroImg.src = slides[0].img;
+              }
+
+              const pillEl = document.getElementById('hero-pill');
+              const titleEl = document.getElementById('hero-title');
+              const descEl = document.getElementById('hero-desc');
+              if(!pillEl || !titleEl || !descEl) return;
+
+              let i = 0;
+              const show = () => {
+                const s = slides[i];
+                pillEl.textContent = s.pill;
+                titleEl.textContent = s.title;
+                descEl.textContent = s.desc;
+
+                const heroImg = document.getElementById('hero-img');
+                if(heroImg && s.img){
+                  heroImg.src = s.img;
+                }
+
+                i = (i + 1) % slides.length;
+              };
+
+
+              // Change every 3 seconds
+              setInterval(show, 3000);
+            })();
+          </script>
+
+
+          <div class="hero-actions">
+            <a class="btn primary" href="#contact">Check Availability</a>
+            <a class="btn" href="#gallery">View Gallery</a>
+          </div>
+        </div>
+
+        <div class="hero-card" aria-label="Highlights">
+          <div class="stat">
+            <div class="stat-num">4.9</div>
+            <div class="stat-label">Guest Rating</div>
+          </div>
+          <div class="stat">
+            <div class="stat-num">24/7</div>
+            <div class="stat-label">Support</div>
+          </div>
+          <div class="stat">
+            <div class="stat-num">8+</div>
+            <div class="stat-label">Experiences</div>
+          </div>
+
+          <div class="hero-card-media" aria-hidden="true">
+            <img id="hero-img" class="hero-img" src="images/wedding tent.jpg" alt="Hero" />
+          </div>
+
+        </div>
+      </div>
+
+      <div class="hero-wave" aria-hidden="true"></div>
+    </section>
+
+    <section id="about" class="section">
+      <div class="container">
+        <div class="section-head">
+          <h2>About Us</h2>
+          <p>Designed for comfort—crafted for memorable moments.</p>
+        </div>
+
+        <div class="grid-2">
+          <div class="card">
+            <h3>Our Promise</h3>
+            <p>
+              Clean spaces, friendly hosts, and a welcoming atmosphere. We focus on small
+              details so your stay feels effortless.
+            </p>
+            <ul class="checklist">
+              <li>Comfort-first rooms</li>
+              <li>Local guidance</li>
+              <li>Family-friendly environment</li>
+            </ul>
+          </div>
+
+          <div class="card media-card">
+            <div class="media-placeholder">Image Placeholder</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="services" class="section section-alt">
+      <div class="container">
+        <div class="section-head">
+          <h2>Services</h2>
+          <p>Everything you need for a relaxing, well-planned trip.</p>
+        </div>
+
+        <div class="grid-3">
+          <article class="service">
+            <div class="service-icon" aria-hidden="true">🏡</div>
+            <h3>Homelike Stay</h3>
+            <p>Spacious rooms and cozy interiors for a calm recharge.</p>
+          </article>
+          <article class="service">
+            <div class="service-icon" aria-hidden="true">🍽️</div>
+            <h3>Local Meals</h3>
+            <p>Curated food experiences and guest-friendly dining support.</p>
+          </article>
+          <article class="service">
+            <div class="service-icon" aria-hidden="true">🧭</div>
+            <h3>Guided Experiences</h3>
+            <p>Recommendations and itinerary help from your hosts.</p>
+          </article>
+          <article class="service">
+            <div class="service-icon" aria-hidden="true">🚗</div>
+            <h3>Pickup/Drop</h3>
+            <p>Arrangements for convenient arrival and departure.</p>
+          </article>
+          <article class="service">
+            <div class="service-icon" aria-hidden="true">🧼</div>
+            <h3>Daily Clean</h3>
+            <p>Fresh, hygienic spaces maintained throughout your stay.</p>
+          </article>
+          <article class="service">
+            <div class="service-icon" aria-hidden="true">📶</div>
+            <h3>Fast Wi‑Fi</h3>
+            <p>Work and stream comfortably from anywhere on-site.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="gallery" class="section">
+      <div class="container">
+        <div class="section-head">
+          <h2>Gallery</h2>
+          <p>A glimpse of the spaces and moments you’ll experience.</p>
+        </div>
+
+        <div class="gallery">
+          <div class="gallery-item"><div class="img" data-image="1.webp"></div></div>
+          <div class="gallery-item"><div class="img" data-image="2.jpg"></div></div>
+          <div class="gallery-item"><div class="img" data-image="3.jpg"></div></div>
+          <div class="gallery-item"><div class="img" data-image="crockery.jpg"></div></div>
+          <div class="gallery-item"><div class="img" data-image="event.webp"></div></div>
+          <div class="gallery-item"><div class="img" data-image="marquee.jpg"></div></div>
+          <div class="gallery-item"><div class="img" data-image="wedding tent.jpg"></div></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact" class="section section-alt">
+      <div class="container">
+        <div class="section-head">
+          <h2>Contact</h2>
+          <p>Send your details and we’ll get back to you quickly.</p>
+        </div>
+
+        <div class="grid-2">
+          <form class="card form" onsubmit="event.preventDefault(); handleSubmit();">
+            <div class="form-row">
+              <label>
+                Name
+                <input type="text" id="name" required placeholder="Your name" />
+              </label>
+              <label>
+                Phone/WhatsApp
+                <input type="tel" id="phone" required placeholder="Phone number" />
+              </label>
+            </div>
+
+            <label>
+              Booking Date
+              <textarea id="message" rows="2" placeholder="Enter booking date (e.g., 12-05-2026)" required></textarea>
+            </label>
+
+
+            <button class="btn primary" type="submit">Submit Request</button>
+            <p class="form-note" id="form-note" role="status" aria-live="polite"></p>
+          </form>
+
+          <div class="card contact-card">
+            <h3>Reach Us</h3>
+            <p class="muted">We’re happy to help you plan the best stay.</p>
+            <ul class="contact-list">
+<li><span class="k">Email</span><span class="v">trivenitenthousepvtltd@gmail.com</span></li>
+              <li><span class="k">Phone</span><span class="v">+91 00000 00000</span></li>
+              <li><span class="k">Location</span><span class="v">1229B/1048B/09A, MALVIYA NAGAR, Mutthiganj, Allahabad, Uttar Pradesh, India, 211003</span></li>
+            </ul>
+
+            <div class="map-placeholder" aria-hidden="true">Map Placeholder</div>
+
+            <a class="btn" href="index.html">Back to top</a>
+
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <a class="whatsapp-float" href="https://wa.me/9369456185" target="_blank" rel="noopener" aria-label="Chat on WhatsApp">
+    <img class="whatsapp-icon" src="images/whatsapp.jpg" alt="WhatsApp" />
+  </a>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+
+      <div class="footer-left">
+        <div class="brand brand-footer">
+          <img class="brand-logo" src="images/logo.jpeg" alt="Trivenitent House" />
+          <span class="brand-text">Trivenitent House</span>
+        </div>
+        <p class="muted">© <span id="year"></span> All rights reserved.</p>
+      </div>
+      <div class="footer-right">
+        <a class="footer-link" href="#about">About</a>
+        <a class="footer-link" href="#services">Services</a>
+        <a class="footer-link" href="#gallery">Gallery</a>
+        <a class="footer-link" href="#contact">Contact</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
+

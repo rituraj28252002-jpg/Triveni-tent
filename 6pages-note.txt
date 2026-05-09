@@ -1,0 +1,9 @@
+Current navigation: 5 pages (Rooms tab removed).
+Remaining pages:
+- index.html
+- page2.html
+- page3.html
+- page4.html
+- page5.html
+
+page6.html still exists on disk but is no longer linked from the navbar.
