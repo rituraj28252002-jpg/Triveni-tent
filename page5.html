@@ -29,8 +29,6 @@
         <a class="nav-link" href="products.html">Products</a>
       </nav>
 
-
-
       <a class="cta" href="page5.html">Book Now</a>
     </div>
   </header>
@@ -57,10 +55,9 @@
             </div>
 
             <label>
-              Booking Date
-              <textarea id="message" rows="2" placeholder="Enter booking date (e.g., 12-05-2026)" required></textarea>
+              Requirements / What you need
+              <textarea id="message" rows="2" placeholder="e.g., Wedding tent, guest count, size, date, stage/furniture" required></textarea>
             </label>
-
 
             <script>
               (function(){
@@ -68,12 +65,11 @@
                 const product = params.get('product');
                 const msg = document.getElementById('message');
                 if(product && msg){
-                  const base = 'Enquiry for: ' + product + '\n\n';
+                  const base = 'Enquiry for: ' + product + '\n\nRequirements: ';
                   msg.value = base + (msg.value || '');
                 }
               })();
             </script>
-
 
             <button class="btn primary" type="submit">Submit Request</button>
             <p class="form-note" id="form-note" role="status" aria-live="polite"></p>
@@ -83,7 +79,7 @@
             <h3>Reach Us</h3>
             <p class="muted">We’re happy to help you plan the best stay.</p>
             <ul class="contact-list">
-<li><span class="k">Email</span><span class="v">trivenitenthousepvtltd@gmail.com</span></li>
+              <li><span class="k">Email</span><span class="v">trivenitenthousepvtltd@gmail.com</span></li>
               <li><span class="k">Phone</span><span class="v">+91 00000 00000</span></li>
               <li><span class="k">Location</span><span class="v">1229B/1048B/09A, MALVIYA NAGAR, Mutthiganj, Allahabad, Uttar Pradesh, India, 211003</span></li>
             </ul>
@@ -165,7 +161,6 @@
 
     </div>
   </footer>
-
 
   <script src="script.js"></script>
 </body>

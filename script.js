@@ -56,13 +56,13 @@ function handleSubmit(){
   const to = 'trivenitenthousepvtltd@gmail.com';
   const subject = encodeURIComponent(`Enquiry${product ? ' - ' + product : ''}`);
 
-  // Booking date is entered in the "message" textarea
   const bodyLines = [
     `Name: ${name || '-'}`,
     `Phone/WhatsApp: ${phone || '-'}`,
     `Enquiry For: ${product || '-'}`,
-    `Booking Date: ${message || '-'}`,
+    `Requirements: ${message || '-'}`,
   ];
+
 
   const body = encodeURIComponent(bodyLines.join('\n'));
 
