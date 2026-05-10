@@ -19,7 +19,8 @@
 html,body{height:100%}
 body{
   margin:0;
-  font- family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji","Segoe UI Emoji";
+  font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji","Segoe UI Emoji";
+
   color:var(--text);
   background:
     radial-gradient(900px 520px at 10% -10%, rgba(37,99,235,.22), transparent 55%),
@@ -106,6 +107,12 @@ body{
 
 .hero-copy h1{margin:14px 0 10px; font-size:48px; line-height:1.05; letter-spacing:-.6px}
 .hero-copy p{margin:0 0 18px; color:var(--muted); font-size:16px; line-height:1.7; max-width:55ch}
+
+/* Make hero brand/pill text dark for readability */
+#home .pill{color:#000;}
+#home .pill span{color:#000;}
+
+
 
 .hero-actions{display:flex; gap:12px; flex-wrap:wrap}
 
@@ -215,15 +222,74 @@ body{
 .gallery{display:grid; grid-template-columns: repeat(3, 1fr); gap:12px}
 .gallery-item{border-radius:16px; overflow:hidden; border:1px solid rgba(255,255,255,.12); background: rgba(255,255,255,.05)}
 
+.gallery-btn{
+  width:100%;
+  height:100%;
+  padding:0;
+  margin:0;
+  border:0;
+  background:transparent;
+  display:block;
+  cursor:pointer;
+}
+
 /* Gallery tiles images: hide label text if any */
 .img[data-image]::after{content:none;}
+
+/* Lightbox */
+.lightbox{display:none; position:fixed; inset:0; z-index:10000; align-items:center; justify-content:center;}
+.lightbox.open{display:flex;}
+.lightbox-backdrop{position:absolute; inset:0; background:rgba(0,0,0,.75);}
+.lightbox-inner{
+  position:relative;
+  width:min(980px, 94vw);
+  max-width:980px;
+  display:grid;
+  grid-template-columns: 44px 1fr 44px;
+  gap:12px;
+  align-items:center;
+}
+.lightbox-img{grid-column:2; width:100%; max-height:78vh; object-fit:contain; border-radius:16px; background:#0b1b2a;}
+.lightbox-close{
+  position:absolute;
+  top:-14px;
+  right:-14px;
+  width:44px;
+  height:44px;
+  border-radius:999px;
+  border:0;
+  background:rgba(255,255,255,.92);
+  color:#000;
+  font-weight:900;
+  cursor:pointer;
+}
+.lightbox-nav{
+  width:44px;
+  height:44px;
+  border-radius:999px;
+  border:0;
+  background:rgba(255,255,255,.18);
+  color:#fff;
+  font-size:18px;
+  cursor:pointer;
+}
+
 
 
 /* Products */
 .products-grid{grid-template-columns: repeat(3, 1fr);}
-.product-card{padding:16px;}
-.product-title{font-weight:900; margin-bottom:6px;}
-.enquire-btn{width:100%; margin-top:10px;}
+.product-card{padding:12px;}
+.product-title{font-weight:900; margin-bottom:6px; font-size:14px;}
+.product-media img{
+  width:100%;
+  height:150px;
+  object-fit:cover;
+  display:block;
+  border-radius:16px;
+  border:1px solid rgba(2,132,199,.16);
+}
+.enquire-btn{width:100%; margin-top:10px; padding:10px 12px; border-radius:14px;}
+
 
 .img{
   height:170px;

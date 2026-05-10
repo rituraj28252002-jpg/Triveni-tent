@@ -31,11 +31,67 @@ document.querySelectorAll('a[href^="#"]').forEach(a => {
   });
 });
 
+// Gallery lightbox (images from gallery tiles)
+(function initLightbox(){
+  const lightbox = document.getElementById('lightbox');
+  const imgEl = document.getElementById('lightbox-img');
+  if(!lightbox || !imgEl) return;
+
+  const tiles = Array.from(document.querySelectorAll('#main-gallery .gallery-btn'));
+  if(!tiles.length) return;
+
+  let index = 0;
+
+  const open = (i) => {
+    index = (i + tiles.length) % tiles.length;
+    const src = tiles[index]?.getAttribute('data-src');
+    if(!src) return;
+
+    imgEl.src = src;
+    imgEl.alt = tiles[index]?.getAttribute('aria-label') || 'Gallery image';
+
+    lightbox.setAttribute('aria-hidden', 'false');
+    lightbox.classList.add('open');
+    document.body.style.overflow = 'hidden';
+  };
+
+  const close = () => {
+    lightbox.setAttribute('aria-hidden', 'true');
+    lightbox.classList.remove('open');
+    imgEl.src = '';
+    document.body.style.overflow = '';
+  };
+
+  tiles.forEach((btn, i) => {
+    btn.addEventListener('click', () => open(i));
+  });
+
+  const prevBtn = lightbox.querySelector('.lightbox-prev');
+  const nextBtn = lightbox.querySelector('.lightbox-next');
+  const closeBtn = lightbox.querySelector('.lightbox-close');
+  const backdrop = lightbox.querySelector('.lightbox-backdrop');
+
+  prevBtn?.addEventListener('click', () => open(index - 1));
+  nextBtn?.addEventListener('click', () => open(index + 1));
+  closeBtn?.addEventListener('click', close);
+  backdrop?.addEventListener('click', close);
+
+  document.addEventListener('keydown', (e) => {
+    if(lightbox.getAttribute('aria-hidden') === 'true') return;
+    if(e.key === 'Escape') close();
+    if(e.key === 'ArrowLeft') open(index - 1);
+    if(e.key === 'ArrowRight') open(index + 1);
+  });
+})();
+
+
 // Products page: set a product in the Contact form
 function setProductEnquiry(productName){
   const params = new URLSearchParams({ product: productName });
+  // Redirect to Contact page with selected product prefilled in the enquiry textarea
   window.location.href = 'page5.html?' + params.toString();
 }
+
 
 document.querySelectorAll('.enquire-btn').forEach(btn => {
   btn.addEventListener('click', () => {
