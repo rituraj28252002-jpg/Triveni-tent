@@ -269,7 +269,8 @@ input:focus, select:focus, textarea:focus{border-color: rgba(124,58,237,.6)}
 
 .contact-list{list-style:none; padding:0; margin:14px 0}
 .contact-list li{display:flex; gap:10px; padding:8px 0; border-bottom:1px solid rgba(255,255,255,.08)}
-.k{min-width:90px; color: rgba(233,238,252,.75); font-weight:900}
+.k{min-width:90px; color: #000; font-weight:900}
+.v{font-weight:800; color:#000}
 .v{font-weight:800}
 
 /* Footer */
