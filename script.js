@@ -80,3 +80,27 @@ function handleSubmit(){
 const yearEl = document.getElementById('year');
 if(yearEl) yearEl.textContent = String(new Date().getFullYear());
 
+// Footer subscribe (client-side only)
+function handleSubscribe(){
+  const note = document.getElementById('subscribe-note');
+  const input = document.getElementById('footer-email');
+  const email = input?.value?.trim();
+
+  if(!note || !input) return;
+
+  if(!email){
+    note.textContent = 'Please enter your email.';
+    return;
+  }
+
+  const ok = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+  if(!ok){
+    note.textContent = 'Please enter a valid email address.';
+    return;
+  }
+
+  note.textContent = 'Subscribed! Thank you.';
+  input.value = '';
+}
+
+

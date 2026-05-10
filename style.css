@@ -273,12 +273,66 @@ input:focus, select:focus, textarea:focus{border-color: rgba(124,58,237,.6)}
 .v{font-weight:800}
 
 /* Footer */
-.site-footer{padding:26px 0; border-top:1px solid rgba(255,255,255,.08); background: rgba(7,11,20,.45)}
-.footer-inner{display:flex; align-items:center; justify-content:space-between; gap:16px; flex-wrap:wrap}
-.footer-right{display:flex; gap:14px; flex-wrap:wrap}
-.footer-link{color:var(--muted); text-decoration:none; font-weight:800}
+.site-footer{padding:34px 0; border-top:1px solid rgba(255,255,255,.08); background: rgba(7,11,20,.45)}
+.footer-inner{display:grid; grid-template-columns: 1.2fr 1fr 1fr 1fr; gap:22px; align-items:start}
+
+.footer-col h3{margin:0 0 10px; font-size:14px; letter-spacing:.2px}
+.footer-col p{margin:0 0 10px}
+
+.footer-left .brand{margin-bottom:10px}
+
+.footer-about{max-width:42ch}
+
+.footer-link{color:var(--muted); text-decoration:none; font-weight:800; display:inline-block; margin:6px 0}
 .footer-link:hover{color:var(--text)}
-.brand-footer{opacity:.95}
+
+.footer-kv{margin:0; padding:0; list-style:none;}
+.footer-kv li{margin:6px 0; color:var(--muted); font-weight:700; font-size:13px; line-height:1.5}
+.footer-k{color: rgba(233,238,252,.8); font-weight:900; display:inline-block; min-width:64px;}
+
+.footer-subscribe{margin-top:8px}
+.footer-subscribe label{display:block; font-weight:900; font-size:13px; color:rgba(233,238,252,.9); margin:0 0 8px}
+.subscribe-row{display:flex; gap:10px; align-items:center}
+.subscribe-row input{
+  flex:1;
+  background: rgba(255,255,255,.05);
+  border:1px solid rgba(255,255,255,.14);
+  border-radius:14px;
+  padding:10px 12px;
+}
+.subscribe-row button{
+  border:0;
+  border-radius:14px;
+  padding:10px 14px;
+  font-weight:900;
+  cursor:pointer;
+  color:#07121c;
+  background: linear-gradient(135deg, var(--primary), rgba(34,197,94,.9));
+}
+
+.subscribe-note{margin-top:8px; font-size:13px; color:var(--muted); min-height:16px}
+
+.footer-social{display:flex; gap:10px; flex-wrap:wrap; margin-top:10px}
+.social-btn{
+  width:42px; height:42px;
+  border-radius:14px;
+  display:inline-flex; align-items:center; justify-content:center;
+  text-decoration:none;
+  background: rgba(255,255,255,.06);
+  border:1px solid rgba(255,255,255,.12);
+}
+.social-btn svg{width:20px; height:20px; fill: rgba(233,238,252,.9)}
+.social-btn:hover{transform: translateY(-1px); transition:.2s}
+
+.brand-footer{opacity:.95} 
+
+@media (max-width: 980px){
+  .footer-inner{grid-template-columns: 1fr 1fr}
+}
+@media (max-width: 720px){
+  .footer-inner{grid-template-columns: 1fr}
+}
+
 
 /* Floating WhatsApp */
 .whatsapp-float{
